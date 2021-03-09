@@ -10,7 +10,10 @@ If you are working on your computer only, you can run it with "127.0.0.1" or "lo
 
 If you run the project on an IDE(Eclipse IDE used for demo), first run the client, then run the server. You will see the connection messages if the server-client is connected correctly. 
 If you run the project on the command line, the commands what you need are below:
-**Server: **``javac Server.java`` (to compile)
-              ``java Server`` (to run)
-**Client:** ``javac Client.java`` (to compile)
-              `` java Client`` (to run)
+
+**Server:** <br>
+``javac Server.java`` (to compile) <br>
+``java Server`` (to run) <br>
+**Client:**  <br>
+``javac Client.java`` (to compile) <br>
+`` java Client`` (to run)

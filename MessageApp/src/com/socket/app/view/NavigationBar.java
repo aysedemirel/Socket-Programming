@@ -2,13 +2,18 @@ package com.socket.app.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 import net.miginfocom.swing.MigLayout;
+
 
 public class NavigationBar extends JPanel {
 
   private static final long serialVersionUID = 1L;
+  private static final int BUTTON_HEIGHT = 200;
+  private static final int BUTTON_WIDTH = 270;
 
   private JButton messageButton;
   private JButton settingButton;
@@ -19,7 +24,7 @@ public class NavigationBar extends JPanel {
     super(new MigLayout("fillx"));
     setVisible(true);
     setBackground(Color.GRAY);
-    setSize(new Dimension(600, 200));
+    setBorder(BorderFactory.createLineBorder(Color.WHITE, 3));
     add(getMessageButton());
     add(getSettingButton());
     add(getExportImportButton());
@@ -29,9 +34,10 @@ public class NavigationBar extends JPanel {
   private JButton getMessageButton() {
     if (messageButton == null) {
       messageButton = new JButton("MESSAGE");
-      messageButton.setBackground(Color.GRAY.darker());
-      messageButton.setSize(new Dimension(200, 200));
-      messageButton.setBorder(null);
+      messageButton.setBackground(Color.GRAY);
+      messageButton.setForeground(Color.WHITE);
+      messageButton.setSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+      messageButton.setBorder(new EmptyBorder(10, 10, 10, 10));
     }
     return messageButton;
   }
@@ -39,9 +45,10 @@ public class NavigationBar extends JPanel {
   private JButton getSettingButton() {
     if (settingButton == null) {
       settingButton = new JButton("SETTING");
-      settingButton.setBackground(Color.GRAY.darker());
-      settingButton.setSize(new Dimension(200, 200));
-      settingButton.setBorder(null);
+      settingButton.setBackground(Color.GRAY);
+      settingButton.setForeground(Color.WHITE);
+      settingButton.setSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+      settingButton.setBorder(new EmptyBorder(10, 10, 10, 10));
     }
     return settingButton;
   }
@@ -49,9 +56,10 @@ public class NavigationBar extends JPanel {
   private JButton getExportImportButton() {
     if (exportImportButton == null) {
       exportImportButton = new JButton("EXPORT/IMPORT");
-      exportImportButton.setBackground(Color.GRAY.darker());
-      exportImportButton.setSize(new Dimension(200, 200));
-      exportImportButton.setBorder(null);
+      exportImportButton.setBackground(Color.GRAY);
+      exportImportButton.setForeground(Color.WHITE);
+      exportImportButton.setSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+      exportImportButton.setBorder(new EmptyBorder(10, 10, 10, 10));
     }
     return exportImportButton;
   }
@@ -59,9 +67,10 @@ public class NavigationBar extends JPanel {
   private JButton getHelpButton() {
     if (helpButton == null) {
       helpButton = new JButton("HELP");
-      helpButton.setBackground(Color.GRAY.darker());
-      helpButton.setSize(new Dimension(200, 200));
-      helpButton.setBorder(null);
+      helpButton.setBackground(Color.GRAY);
+      helpButton.setForeground(Color.WHITE);
+      helpButton.setSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+      helpButton.setBorder(new EmptyBorder(10, 10, 10, 10));
     }
     return helpButton;
   }

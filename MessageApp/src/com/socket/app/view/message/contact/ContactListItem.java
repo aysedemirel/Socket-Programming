@@ -1,9 +1,10 @@
-package com.socket.app.view.contact;
+package com.socket.app.view.message.contact;
 
 import java.awt.Color;
-import java.awt.Dimension;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import net.miginfocom.swing.MigLayout;
 
 public class ContactListItem extends JPanel {
 
@@ -15,16 +16,17 @@ public class ContactListItem extends JPanel {
   private JLabel summary;
 
   public ContactListItem() {
+    super(new MigLayout("fillx"));
     setVisible(true);
-    setBackground(Color.GRAY);
-    setSize(new Dimension(400, 400));
-    add(getIcon());
-    add(getMessageArea());
+    add(getIcon(), "dock west");
+    add(getMessageArea(), "dock north");
+    setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
   }
 
   private JLabel getIcon() {
     if (icon == null) {
       icon = new JLabel("ICON");
+      icon.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
     }
     return icon;
   }
@@ -34,8 +36,9 @@ public class ContactListItem extends JPanel {
       msgArea = new JPanel();
       msgArea.setVisible(true);
       msgArea.setBackground(Color.WHITE);
-      msgArea.setSize(new Dimension(100, 70));
-      msgArea.add(getNameArea());
+      msgArea.setLayout(new MigLayout("filly"));
+      msgArea.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
+      msgArea.add(getNameArea(), "wrap");
       msgArea.add(getSummaryArea());
     }
     return msgArea;
@@ -51,6 +54,7 @@ public class ContactListItem extends JPanel {
   private JLabel getSummaryArea() {
     if (summary == null) {
       summary = new JLabel("Summary");
+      summary.setForeground(Color.GRAY);
     }
     return summary;
   }

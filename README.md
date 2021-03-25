@@ -7,10 +7,10 @@ Socket Programming: Client-Server
 - **Message-App:** It provides messaging opportunities with TCP infrastructure. It presents a user interface designed for messaging. The design was codded with Swing.
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/readme-md-generator">
+  <a href="https://github.com/aysedemirel/Socket-Programming/blob/master/README.md">
     <img alt="downloads" src="https://img.shields.io/badge/English-En-blue" target="_blank" />
   </a>
-  <a href="https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE">
+  <a href="https://github.com/aysedemirel/Socket-Programming/blob/master/doc/tr/Readme_tr.md">
     <img alt="License: MIT" src="https://img.shields.io/badge/Turkish-Tr-red" target="_blank" />
   </a>
 </p>

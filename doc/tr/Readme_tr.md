@@ -8,10 +8,10 @@ Soket programlama: İstemci-Sunucu
 - **(Message-App) Mesajlaşma Uygulaması:** TCP altyapısı ile mesajlaşma olanağı sağlar. Mesajlaşma için tasarlanmış bir kullanıcı arayüzü sunar. Tasarım Swing üzerinde gerçekleştirildi.
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/readme-md-generator">
+  <a href="https://github.com/aysedemirel/Socket-Programming/blob/master/README.md">
     <img alt="downloads" src="https://img.shields.io/badge/English-En-blue" target="_blank" />
   </a>
-  <a href="https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE">
+  <a href="https://github.com/aysedemirel/Socket-Programming/blob/master/doc/tr/Readme_tr.md">
     <img alt="License: MIT" src="https://img.shields.io/badge/Turkish-Tr-red" target="_blank" />
   </a>
 </p>

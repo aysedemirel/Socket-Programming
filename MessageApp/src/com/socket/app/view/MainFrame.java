@@ -14,7 +14,7 @@ public class MainFrame extends JFrame {
 
   public MainFrame() {
     setLayout(new MigLayout("filly"));
-    setSize(new Dimension(1080, 1080));
+    setSize(new Dimension(800, 900));
     add(getNavigationBar(), "dock north");
     add(getMessageContactPanel(), "dock east");
   }

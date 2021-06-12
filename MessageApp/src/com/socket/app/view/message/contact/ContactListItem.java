@@ -4,6 +4,7 @@ import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import com.socket.app.ImageUtil;
 import net.miginfocom.swing.MigLayout;
 
 public class ContactListItem extends JPanel {
@@ -16,16 +17,16 @@ public class ContactListItem extends JPanel {
   private JLabel summary;
 
   public ContactListItem() {
-    super(new MigLayout("fillx"));
+    super(new MigLayout("", "[grow][grow]", "[grow]"));
     setVisible(true);
-    add(getIcon(), "dock west");
-    add(getMessageArea(), "dock north");
+    add(getIcon());
+    add(getMessageArea());
     setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
   }
 
   private JLabel getIcon() {
     if (icon == null) {
-      icon = new JLabel("ICON");
+      icon = new JLabel(ImageUtil.EMOJI_ICON);
       icon.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
     }
     return icon;
@@ -36,8 +37,8 @@ public class ContactListItem extends JPanel {
       msgArea = new JPanel();
       msgArea.setVisible(true);
       msgArea.setBackground(Color.WHITE);
-      msgArea.setLayout(new MigLayout("filly"));
       msgArea.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
+      msgArea.setLayout(new MigLayout("", "[grow]", "[grow][grow]"));
       msgArea.add(getNameArea(), "wrap");
       msgArea.add(getSummaryArea());
     }

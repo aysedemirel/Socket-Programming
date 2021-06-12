@@ -74,9 +74,4 @@ public class NavigationBar extends JPanel {
     }
     return helpButton;
   }
-
-  // private String getHtml() {
-  // return "<html>Uncolored Text! <font color=purple><selection color=white>Testing if some html
-  // can turn the selection color white!</selection></font> more Uncolored Text!</html>";
-  // }
 }

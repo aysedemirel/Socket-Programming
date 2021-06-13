@@ -1,7 +1,6 @@
-package com.socket.app.view.message.contact;
+package com.socket.app.view.message.contact.extra;
 
 import java.text.ParseException;
-import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
@@ -15,17 +14,15 @@ public class AddContactPanel extends JDialog {
 
   private JTextArea nameArea;
   private JFormattedTextField ipArea;
-  private JButton okButton;
-  private JButton cancelButton;
+  private ButtonPanel butonPanel;
 
   public AddContactPanel() {
-    setLayout(new MigLayout("", "[grow][grow]", "[grow][grow]"));
-    add(new JLabel("Contact Name: "));
-    add(getNameArea(), "wrap");
-    add(new JLabel("Contact IP Adress: "));
-    add(getIpArea(), "wrap");
-    add(getOkButton());
-    add(getCancelButton());
+    getContentPane().setLayout(new MigLayout("", "[grow][grow]", "[grow][grow][]"));
+    getContentPane().add(new JLabel("Contact Name: "), "cell 0 0");
+    getContentPane().add(getNameArea(), "cell 1 0");
+    getContentPane().add(new JLabel("Contact IP Adress: "), "cell 0 1");
+    getContentPane().add(getIpArea(), "cell 1 1");
+    getContentPane().add(getButtonPanel(), "cell 0 2 2 1");
     setSize(300, 200);
     setTitle("Add Contact");
     new AddContactController(this);
@@ -57,17 +54,11 @@ public class AddContactPanel extends JDialog {
     }
   }
 
-  public JButton getOkButton() {
-    if (okButton == null) {
-      okButton = new JButton("OK");
+  public ButtonPanel getButtonPanel() {
+    if (butonPanel == null) {
+      butonPanel = new ButtonPanel();
     }
-    return okButton;
+    return butonPanel;
   }
 
-  public JButton getCancelButton() {
-    if (cancelButton == null) {
-      cancelButton = new JButton("Cancel");
-    }
-    return cancelButton;
-  }
 }

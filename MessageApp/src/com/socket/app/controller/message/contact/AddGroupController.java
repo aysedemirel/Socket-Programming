@@ -2,29 +2,27 @@ package com.socket.app.controller.message.contact;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import com.socket.app.view.message.contact.extra.AddContactPanel;
+import com.socket.app.view.message.contact.extra.AddGroupPanel;
 
-public class AddContactController {
-  private static final String IP_REGEX = "^(?:[0-9]{1,3}\\.){3}[0-9]{1,3}$";
-  private AddContactPanel panel;
+public class AddGroupController {
+  private AddGroupPanel panel;
 
-  public AddContactController(AddContactPanel panel) {
+  public AddGroupController(AddGroupPanel panel) {
     this.panel = panel;
     addListenerToButtons();
   }
-
 
   private void addListenerToButtons() {
     panel.getButtonPanel().getOkButton().addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        String nameText = panel.getNameArea().getText();
-        if (!isIpCorrect()) {
-          System.out.println("Please fill the ip correctly...");
+        String nameText = panel.getGroupNameArea().getText();
+        if (panel.getContactListPanel().isCheckEmpty()) {
+          System.out.println("Please choose some contacts...");
         } else if (nameText.equals("")) {
-          System.out.println("Please fill the name area correctly...");
+          System.out.println("Please fill the group area correctly...");
         } else {
-          // TODO: add contact to database
+          // TODO: add group to database
           panel.setVisible(false);
         }
       }
@@ -36,10 +34,4 @@ public class AddContactController {
       }
     });
   }
-
-  private boolean isIpCorrect() {
-    String ip = panel.getIpArea().getText();
-    return ip.matches(IP_REGEX) || ip.equals("   .   .   .   ");
-  }
-
 }
